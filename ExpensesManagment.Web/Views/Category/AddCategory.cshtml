@@ -1,0 +1,33 @@
+﻿@model ExpensesManagment.Web.Data.Entities.Category
+@{
+    ViewData["Title"] = "AddCategoty";
+    var test = "";
+}
+
+<h1>AddCategoty</h1>
+
+<form asp-action="AddCategory" asp-controller="Category" method="post">
+
+    <label>Category Name</label>
+    <input asp-for="Name"/>
+    <br />
+
+    <br />
+
+    <label>Pick A color</label>
+    <input type="color" id="color-picker" asp-for="Color"/>
+    <br />
+    <br />
+    <button>Add Category</button>
+</form>
+
+<script>
+    var input = document.querySelector("#input").value
+    alert(input)
+</script>
+
+@section Css
+{
+   <link rel="stylesheet" href="~/css/ColorPicker.css" asp-append-version="true" />
+
+}

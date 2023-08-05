@@ -1,0 +1,74 @@
+
+a.navbar-brand[b-fsx0l8vmvy] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-fsx0l8vmvy] {
+  color: #0077cc;
+}
+
+.btn-primary[b-fsx0l8vmvy] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-fsx0l8vmvy], .nav-pills .show > .nav-link[b-fsx0l8vmvy] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-fsx0l8vmvy] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-fsx0l8vmvy] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-fsx0l8vmvy] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-fsx0l8vmvy] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-fsx0l8vmvy] {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+
+
+
+
+
+//------------------
+.tooltip[b-fsx0l8vmvy] {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext[b-fsx0l8vmvy] {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext[b-fsx0l8vmvy] {
+    visibility: visible;
+}

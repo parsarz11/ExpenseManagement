@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewData["Title"] = "Categories";
+    int count = 1;
+}
+@model ExpensesManagment.Web.Models.ViewModel.CategoryViewModel
+<h1>Categories</h1>
+
+<a asp-controller="category" asp-action="AddCategory" class="btn btn-outline-dark m-2">add category</a>
+<br />
+<div style="background-color:#edede9 ; border-radius:30px; width:1270px;" class="shadow">
+
+
+    <div class="card-header" style="height: 43.888889px; border-top-left-radius:30px; border-top-right-radius:30px;">
+        <h6 class="font-weight-bold text-primary">
+            Last Five Expenses
+        </h6>
+    </div>
+
+
+    <div style="padding: 0px 10px 0px 10px">
+        <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">color</th>
+            <th></th>
+            
+        </tr>
+    </thead>
+    @foreach(var item in Model.categoryList)
+    {
+        <tr>
+            <td >@count</td>
+            <td>@item.Name</td>
+
+
+
+
+            <td>
+                <span style="
+                height: 25px;
+                width: 25px;
+                background-color:@item.Color;
+                border-radius: 50%;
+                border:solid black 1px;
+                display: inline-block;"></span>
+            </td>
+            <td>
+                <div>
+                    <button class="btn btn-danger">Delete</button>
+                    <button class=" btn btn-primary">Edit</button>
+                </div>
+            </td>
+        </tr>
+           count++;
+        
+    }
+</table>
+    </div>
+</div>

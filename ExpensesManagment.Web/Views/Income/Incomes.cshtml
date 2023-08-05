@@ -1,0 +1,53 @@
+﻿@model List<ExpensesManagment.Web.Models.DisplayIncomeModel>;
+
+<h2>Incomes</h2>
+<a class="btn btn-outline-dark m-2" asp-controller="income" asp-action="AddIncome">Add Income</a>
+@{int Count = 1;}
+
+<div style="background-color:#edede9 ; border-radius:30px; width:1270px;" class="shadow">
+
+
+    <div class="card-header" style="height: 43.888889px; border-top-left-radius:30px; border-top-right-radius:30px;">
+        <h6 class="font-weight-bold text-primary">
+            Last Five Expenses
+        </h6>
+    </div>
+
+
+    <div style="padding: 0px 10px 0px 10px">
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Source</th>
+                    <th scope="col">Value</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model)
+                {
+
+                    <tr>
+                        <td scope="col">@Count</td>
+
+                        <td>@item.Source</td>
+
+                        <td>@item.IncomeMoney</td>
+
+                        <td>
+                            <div>
+                                <button class="btn btn-danger">Delete</button>
+                                <button class=" btn btn-primary">Edit</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    Count++;
+                }
+            </tbody>
+        </table>
+        
+    </div>
+</div>

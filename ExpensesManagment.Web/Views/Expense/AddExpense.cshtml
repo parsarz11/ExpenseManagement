@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewData["Title"] = "AddExpense";
+}
+@model ExpensesManagment.Web.Models.ViewModel.CategoryViewModel
+<h1>AddExpense</h1>
+
+<form asp-controller="Expense" asp-action="AddExpense" method="post">
+    <div class="form-group">
+        <label>Add subject </label>
+        <input asp-for="expense.Name" class="form-control" />
+        <small  class="form-text text-muted">That is for what is cause of this record</small>
+
+    </div>
+    <div class="form-group">
+        <label>Cost</label>
+        <div class="input-group mb-3">
+            <br />
+            <span class="input-group-text">$</span>
+            <input type="number" class="form-control" asp-for="expense.Cost">
+            
+        </div>
+        <small class="form-text text-muted">how much is your payment</small>
+    </div>
+    <div class ="form-group">
+        <label>Date you expense</label>
+        <input type="datetime-local" asp-for="expense.DateTime" class="form-control" id="DateTime" max="2099-12-3T16:30:59" step="10"/>
+        <small class="form-text text-muted">in what date</small>
+
+    </div>
+    <div class="form-group">
+        <label>Your Category</label>
+
+        <select asp-for="expense.CategoryFK" class="form-control">
+            @foreach(var item in Model.categoryList)
+            {
+                <option value="@item.Id">
+                    @item.Name
+                </option>
+            }
+        </select>
+        <small class="form-text text-muted">select the Category you want</small>
+
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">submit</button>
+</form>
+@section Scripts
+{
+    <script>
+
+       // var currentdate = new Date();
+       // var datetime = currentdate.getFullYear() + "-0"
+       //         + (currentdate.getMonth()+1)  + "-0" 
+       //         + currentdate.getDate() + "T"  
+       //         + currentdate.getHours() + ":"  
+       //        + currentdate.getMinutes()
+       // $('#DateTIme').val(datetime)
+       //alert(datetime)
+
+       // $("#DateTime").val(`${currentdate.getFullYear}-${currentdate.getMonth}-${currentdate.getDate}T${currentdate.getTime}`);
+
+        //$(document).ready(function () {
+        //    $('input[type=datetime-local]').val(new Date().toJSON().slice(0, 19));
+        //});
+
+
+        var now = new Date();
+        $("#DateTime").val(new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().substring(0, 19));
+    </script>
+}
