@@ -27,7 +27,7 @@ namespace ExpensesManagment.Web.Controllers
             DashBoardVM.MonthlyIncome = _IncomeService.Incomes("Monthly");
             DashBoardVM.AnnualIncome = _IncomeService.Incomes("Annual");
             DashBoardVM.ExpensesAnnaul = _expenseService.Expenses("Yearly");
-            DashBoardVM.Average = 000;
+            DashBoardVM.Average = 100;
             DashBoardVM.categories = _categoryRepo.categoryList();
 
             //DashBoardVM.MonthlyPieChartData = _dashboardServices.MonthlyPieChart();

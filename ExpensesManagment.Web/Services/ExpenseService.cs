@@ -70,12 +70,12 @@ namespace ExpensesManagment.Web.Services
         {
             if( Type == "Monthly")
             {
-                int MonthlyExpenses = _expensesRepo.ExpenseList().Where(x => x.DateTime.Month == DateTime.Now.Month).Select(y => y.Cost).FirstOrDefault();
+                int MonthlyExpenses = _expensesRepo.ExpenseList().Where(x => x.DateTime.Month == DateTime.Now.Month).Select(y => y.Cost).Sum();
                 return MonthlyExpenses;
             }
             else
             {
-                int YearlyExpenses = _expensesRepo.ExpenseList().Where(x => x.DateTime.Year == DateTime.Now.Year).Select(y => y.Cost).FirstOrDefault();
+                int YearlyExpenses = _expensesRepo.ExpenseList().Where(x => x.DateTime.Year == DateTime.Now.Year).Select(y => y.Cost).Sum();
                 return YearlyExpenses;
             }
         }
